@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+div.card-inbox {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.txt-email-body {
+    color: #76838f;
+}
+
+tbody { height: 400px; overflow-y: scroll; display:block; }
+
+table.responsive-table thead {
+    width: 100%;
+    display: table;
+}
+
+.selected {
+    background-color: #eee;
+}
+
+.gray{
+    background-color: #d9d9d9
+}
+.light{
+    background-color: none;
+}

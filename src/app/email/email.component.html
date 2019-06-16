@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card card-inbox">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Inbox</h4>
+        <p class="card-description">
+          Unread
+        </p>
+        <table class="table responsive-table my-custom-scrollbar">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Inbox</th>
+              <th class="text-right">Filter <i class="mdi mdi-chevron-down"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of data; let i=index" (click)="rowIndex=i" [ngClass]="{'gray':rowIndex===i,'light':rowIndex !==i}">
+              <td>
+                <span class="template-demo d-flex justify-content-between flex-nowrap">
+                    <button class="btn btn-gradient-{{ row.from.permissionColor }} btn-rounded btn-icon">
+                      {{row.from.icon_name}}
+                    </button>
+                </span>
+              </td>
+              <td>
+                <div>
+                  <div class="m-1">
+                    <div class="float-left" >
+                        {{row.from.name}}
+                    </div>                    
+                  </div>
+                  <div class="m-1">
+                      {{row.subject}}
+                  </div>
+                  <div class="m-1 txt-email-body">
+                      {{ row.body.length > 120 ? row.body.substr(0,120)+'...' : row.body }}
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="col-12 float-right">
+                  <div [hidden]="rowIndex !==i">
+                    <i class="mdi mdi-delete txt-email-body"></i>
+                    <i class="mdi mdi-email txt-email-body"></i>
+                    <i class="mdi mdi-flag txt-email-body"></i>
+                    <i class="mdi mdi-pin txt-email-body"></i>
+                  </div>
+                </div>
+                <div class="col-12">
+                  {{row.from.time}}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
